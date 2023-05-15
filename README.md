@@ -1,2 +1,3 @@
 # simple_shell
-A simple shell project.
+Authors:
+henrynyobange@gmail.com
