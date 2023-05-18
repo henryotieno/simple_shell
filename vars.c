@@ -7,7 +7,7 @@
  * @p: positional address
  * Return: 1 for deli, 0 if not
  */
-int is_chain(info_t *info, char *buf, size_t *p)
+int is_chain(info_x *info, char *buf, size_t *p)
 {
 	size_t k = *p;
 
@@ -43,7 +43,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
  * @i: kick off pos.
  * Return: Void
  */
-void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
+void check_chain(info_x *info, char *buf, size_t *p, size_t i, size_t len)
 {
 	size_t k = *p;
 
@@ -72,7 +72,7 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
  * @info: par structure
  * Return: 1 when changed, 0 if not
  */
-int replace_alias(info_t *info)
+int replace_alias(info_x *info)
 {
 	int a;
 	list_t *node;
@@ -100,7 +100,7 @@ int replace_alias(info_t *info)
  * @info: par structure
  * Return: 1 when changed, 0 if not
  */
-int replace_vars(info_t *info)
+int replace_vars(info_x *info)
 {
 	int a = 0;
 	list_t *node;

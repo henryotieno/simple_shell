@@ -28,7 +28,7 @@ char *get_history_file(info_t *info)
  * @info: par structure
  * Return: 1 right, -1 wrong
  */
-int write_history(info_t *info)
+int write_history(info_x *info)
 {
 	ssize_t fd;
 	char *filename = get_history_file(info);
@@ -56,7 +56,7 @@ int write_history(info_t *info)
  * @info: par structure
  * Return: history no. right, 0 wrong
  */
-int read_history(info_t *info)
+int read_history(info_x *info)
 {
 	int a, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
@@ -106,7 +106,7 @@ int read_history(info_t *info)
  * @linecount: no. of history lines
  * Return: 0
  */
-int build_history_list(info_t *info, char *buf, int linecount)
+int build_history_list(info_x *info, char *buf, int linecount)
 {
 	list_t *node = NULL;
 
@@ -123,7 +123,7 @@ int build_history_list(info_t *info, char *buf, int linecount)
  * @info: args container
  * Return: updated no. of history lines
  */
-int renumber_history(info_t *info)
+int renumber_history(info_x *info)
 {
 	list_t *node = info->history;
 	int a = 0;

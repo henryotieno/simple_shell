@@ -6,7 +6,7 @@
  * @info: information structure
  * Return: 1 right, 0 wrong
  */
-int is_cmd(info_t *info, char *path)
+int is_cmd(info_x *info, char *path)
 {
 	struct stat st;
 
@@ -47,7 +47,7 @@ char *dup_chars(char *pathstr, int start, int stop)
  * @info: structure of info
  * Return: full path of cmd if right/ null if not
  */
-char *find_path(info_t *info, char *pathstr, char *cmd)
+char *find_path(info_x *info, char *pathstr, char *cmd)
 {
 	int a = 0, curr_pos = 0;
 	char *path;
