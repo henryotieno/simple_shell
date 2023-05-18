@@ -113,13 +113,13 @@ int replace_vars(info_x *info)
 		if (!_strcmp(info->argv[a], "$?"))
 		{
 			replace_string(&(info->argv[a]),
-					_strdup(convert_number(info->status, 10, 0)));
+					_strdup(change_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcmp(info->argv[a], "$$"))
 		{
 			replace_string(&(info->argv[a]),
-					_strdup(convert_number(getpid(), 10, 0)));
+					_strdup(change_number(getpid(), 10, 0)));
 			continue;
 		}
 		node = node_starts_with(info->env, &info->argv[a][1], '=');

@@ -138,6 +138,7 @@ char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
+
 /*for toem_exits.c */
 char *_cpystrn(char *, char *, int);
 char *_cattstrn(char *, char *, int);
