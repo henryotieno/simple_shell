@@ -119,17 +119,18 @@ int _atoi(char *);
 
 
 /*for toem_vars.c */
-int is_chain(info_t *, char *, size_t *);
-void check_chain(info_t *, char *, size_t *, size_t, size_t);
-int replace_alias(info_t *);
-int replace_vars(info_t *);
+int is_chain(info_x *, char *, size_t *);
+void check_chain(info_x *, char *, size_t *, size_t, size_t);
+int replace_alias(info_x *);
+int replace_vars(info_x *);
 int replace_string(char **, char *);
 
 /*for toem_shloop.c */
-int hsh(info_t *, char **);
-int find_builtin(info_t *);
-void find_cmd(info_t *);
-void fork_cmd(info_t *);
+int hsh(info_x *, char **);
+int find_builtin(info_x *);
+void find_cmd(info_x *);
+void fork_cmd(info_x *);
+
 
 /*for toem_string1.c */
 char *_strcpy(char *, char *);
@@ -138,9 +139,10 @@ void _puts(char *);
 int _putchar(char);
 
 /*for toem_exits.c */
-char *_strncpy(char *, char *, int);
-char *_strncat(char *, char *, int);
+char *_cpystrn(char *, char *, int);
+char *_cattstrn(char *, char *, int);
 char *_strchr(char *, char);
+
 
 /*for toem_lists1.c */
 size_t list_len(const list_t *);
@@ -150,16 +152,18 @@ list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
 /*for toem_history.c */
-char *get_history_file(info_t *info);
-int write_history(info_t *info);
-int read_history(info_t *info);
-int build_history_list(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+char *get_history_file(info_x *info);
+int write_history(info_x *info);
+int read_history(info_x *info);
+int build_history_list(info_x *info, char *buf, int linecount);
+int renumber_history(info_x *info);
+
 
 /*for toem_getinfo.c */
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void clear_info(info_x *);
+void set_info(info_x *, char **);
+void free_info(info_x *, int);
+
 
 /*for toem_lists.c */
 list_t *add_node(list_t **, const char *, int);
@@ -197,9 +201,10 @@ void free_info(info_x *, int);
 int bfree(void **);
 
 /*for toem_parser.c */
-int is_cmd(info_t *, char *);
+int is_cmd(info_x *, char *);
 char *dup_chars(char *, int, int);
-char *find_path(info_t *, char *, char *);
+char *find_path(info_x *, char *, char *);
+
 
 /*for toem_exits.c */
 char *_cpystrn(char *, char *, int);
