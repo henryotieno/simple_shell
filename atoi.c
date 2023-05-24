@@ -7,7 +7,7 @@
  * Return: interactive mode shows 1, 0 otherwise
  */
 
-int av(info_x *info)
+int interactive(info_x *info)
 {
 	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
@@ -74,4 +74,3 @@ int _atoi(char *b)
 
 	return (output);
 }
-

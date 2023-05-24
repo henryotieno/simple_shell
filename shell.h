@@ -112,6 +112,7 @@ typedef struct builtin
 } builtin_table;
 
 /*for toem_atoi.c */
+int interactive (info_x *);
 int av (info_x *);
 int is_delim(char, char *);
 int _isalpha(int);
@@ -130,7 +131,6 @@ int hsh(info_x *, char **);
 int find_builtin(info_x *);
 void find_cmd(info_x *);
 void fork_cmd(info_x *);
-
 
 /*for toem_string1.c */
 char *_strcpy(char *, char *);
