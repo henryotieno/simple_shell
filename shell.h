@@ -131,7 +131,6 @@ int find_builtin(info_x *);
 void find_cmd(info_x *);
 void fork_cmd(info_x *);
 
-
 /*for toem_string1.c */
 char *_strcpy(char *, char *);
 char *_strdup(const char *);

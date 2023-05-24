@@ -2,23 +2,23 @@
 
 /**
  * hsh - major loop
+ * @info: parameter & return info structure
  * @av: argv
- * @info: parameter and structure
  * Return: 0 if right, 1 if wrong
  */
 int hsh(info_x *info, char **av)
 {
-	ssize_t q = 0;
+	ssize_t r = 0;
 	int builtin_ret = 0;
 
-	while (q != -1 && builtin_ret != -2)
+	while (r != -1 && builtin_ret != -2)
 	{
 		clear_info(info);
 		if (interactive(info))
 			_puts("$ ");
 		_eputchar(BUF_FLUSH);
-		q = get_input(info);
-		if (q != -1)
+		r = get_input(info);
+		if (r != -1)
 		{
 			set_info(info, av);
 			builtin_ret = find_builtin(info);
