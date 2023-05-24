@@ -1,8 +1,10 @@
 #include "shell.h"
 
 /**
- * return true if it is interactive and false if otherwise
- * return 0 if not interactive and 1 if yes
+ * av - in interactive mode the shell returns true
+ * @info: address at the struct
+ *
+ * Return: interactive mode shows 1, 0 otherwise
  */
 
 int av(info_x *info)
@@ -11,11 +13,12 @@ int av(info_x *info)
 }
 
 /**
- * is_delim is applied so as to check whether the value is a delimeter
- * char to check is y
- * string delimeter is delim
- * 0 is returned if false and 1 when otherwise
+ * is_delim - character is checked if it is a delimeter
+ * @y: the char we want
+ * @delim: is delimeter string
+ * Return: true if 1, 0 if false
  */
+
 int is_delim(char y, char *delim)
 {
 	while (*delim)
@@ -25,19 +28,24 @@ int is_delim(char y, char *delim)
 }
 
 /**
- * _isalpha is used to point out alphabetic character
- * Input character is y
- * 1 is returned  if y is alphabetic and 0 if otherwise
+ * _isalpha - alphabetic character is searched
+ * @y: what to input
+ * Return: if c is alphabetic show 1, 0 otherwise
  */
 
 int _isalpha(int y)
 {
-	if ((y >= 'a' && y <= 'z') || (y >= 'A' && y<= 'Z'))
+	if ((y >= 'a' && y <= 'z') || (y >= 'A' && y <= 'Z'))
 		return (1);
 	else
 		return (0);
 }
 
+/**
+ * _atoi - changes the string to an integer
+ * @b: a string that is to be manipulated
+ * Return: 0 if no string, 1 if true
+ */
 
 int _atoi(char *b)
 {

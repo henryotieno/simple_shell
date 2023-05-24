@@ -1,16 +1,21 @@
 #include "shell.h"
 
 /**
- * theexit prompts and exit from the shell
- * Return: exits the shell with a given exit status
+ * _theexit - exits the shell
+ * @info: Structure containing potential arguments. Used to maintain
+ * constant function prototype.
+ * Return: exits with a given exit status
+ * (0) if info.argv[0] != "exit"
  */
+
 int _theexit(info_x *info)
 {
 	int exitstatus;
 
-	if (info->argv[1]) 
+	if (info->argv[1])/* If there is an exit arguement */ 
 	{
 		exitstatus = _erratoi(info->argv[1]);
+
 		if (exitstatus == -1)
 		{
 			info->status = 2;
@@ -27,14 +32,16 @@ int _theexit(info_x *info)
 }
 
 /**
- * _thecd is helpful in changing the current directory of the process
- * It is a constant function prototype.
+ * _thecd - changes the current directory of the process
+ * @info: Structure containing potential arguments. Used to maintain
+ * constant function prototype.
+ * Return: Always 0
  */
+
 int _thecd(info_x *info)
 {
 	char *b, *dir, buffer[1024];
 	int chdir_ret;
-
 	b = getcwd(buffer, 1024);
 	if (!b)
 		_puts("TODO: >>getcwd failure message appears here<<\n");
@@ -43,7 +50,7 @@ int _thecd(info_x *info)
 		dir = _getenv(info, "HOME=");
 		if (!dir)
 			chdir_ret = 
-				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
+			chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
 	}
@@ -57,7 +64,7 @@ int _thecd(info_x *info)
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = 
-			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
+		chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
@@ -75,9 +82,12 @@ int _thecd(info_x *info)
 }
 
 /**
- * _thehelp -when applied changes the process directory
- * will always return 0
+ * _thehelp - changes the current directory of the process
+ * @info: Structure containing potential arguments. Used to maintain
+ * constant function prototype.
+ * Return: Always 0
  */
+
 int _thehelp(info_x *info)
 {
 	char **arg_array;
